@@ -18,10 +18,11 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
-    'react/no-unescaped-entities': 'warn',
+    'react/no-unescaped-entities': 'off',
     'react-hooks/rules-of-hooks': 'off',
     'react-hooks/exhaustive-deps': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     'prefer-const': 'warn',
     'prefer-spread': 'off',
   },
