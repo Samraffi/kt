@@ -1,0 +1,78 @@
+@import "../../../variables";
+
+.content {
+  padding-left: 30px;
+  background-color: $background-light;
+  margin-top: 20px;
+
+  .main {
+    display: flex;
+    align-items: start;
+    gap: 50px;
+    margin-bottom: 35px;
+  }
+
+  .arrowFirst {
+    align-self: center;
+  }
+
+  .info {
+    max-width: 840px;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    margin-bottom: 17px;
+  }
+
+  .titles {
+    display: flex;
+  }
+
+  .solution {
+    &__text {
+      max-width: 320px;
+    }
+
+    &__title {
+      margin-bottom: 27px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__wrapper {
+      display: flex;
+      gap: 28px;
+    }
+
+    &__number {
+      font-size: 50px;
+      width: 49px;
+      font-weight: $font-medium;
+      color: $light-green;
+      line-height: 0.9;
+    }
+
+    &__images {
+      display: flex;
+      gap: 25px;
+      padding-left: 76px;
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .results {
+    flex-direction: column;
+    list-style: initial;
+    padding-left: 25px;
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.codeBlock {
+  background-color: $text-color-primary;
+  color: $text-color-secondary;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 1rem;
+
+  code {
+    display: block;
+  }
+}

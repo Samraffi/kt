@@ -1,0 +1,183 @@
+@import "../../../variables";
+
+.cards {
+  &__hexagons {
+    position: relative;
+    min-width: 595px;
+    height: 420px;
+
+    @include at-md {
+      min-width: 100%;
+      height: auto;
+      min-height: 300px;
+    }
+
+    @include at-sm {
+      min-height: 300px;
+    }
+
+    @include at-md {
+      min-width: 100%;
+      height: auto;
+      min-height: 300px;
+    }
+
+    @include at-sm {
+      min-height: 300px;
+    }
+  }
+
+  &__hexagon {
+    width: 224px;
+    height: 200px;
+    position: absolute;
+
+    @include at-md {
+      width: 180px;
+      height: 160px;
+    }
+
+    @include at-sm {
+      max-width: 150px;
+      max-height: 135px;
+    }
+    @include at-md {
+      width: 180px;
+      height: 160px;
+    }
+
+    @include at-sm {
+      max-width: 150px;
+      max-height: 135px;
+    }
+  }
+}
+
+div.card {
+  cursor: pointer;
+  perspective: 1000px;
+  position: absolute;
+
+  &__left {
+    left: 0;
+    top: 50%;
+  }
+
+  &__top {
+    top: 0;
+    left: 50%;
+  }
+
+  &__bottom {
+    top: 50%;
+    left: 50%;
+    @include at-md {
+      top: 55%;
+    }
+    @include at-md {
+      top: 55%;
+    }
+  }
+
+  &__right {
+    left: 370px;
+    top: 50%;
+    @include at-md {
+      left: 62%;
+    }
+    @include at-md {
+      left: 62%;
+    }
+  }
+
+  &__clickedLeft .front {
+    transform: translate(0, -50%) rotateY(180deg);
+  }
+
+  &__clickedLeft .back {
+    transform: translate(0, -50%) rotateY(360deg);
+  }
+
+  &__clickedTop .front {
+    transform: translate(-50%, 0) rotateY(180deg);
+  }
+
+  &__clickedTop .back {
+    transform: translate(-50%, 0) rotateY(360deg);
+  }
+
+  &__clickedBottom .front {
+    transform: translate(-50%, 0) rotateY(180deg);
+  }
+
+  &__clickedBottom .back {
+    transform: translate(-50%, 0) rotateY(360deg);
+  }
+
+  &__clickedRight .front {
+    transform: translate(0, -50%) rotateY(180deg);
+  }
+
+  &__clickedRight .back {
+    transform: translate(0, -50%) rotateY(360deg);
+  }
+}
+
+.left,
+.top,
+.bottom,
+.right {
+  &.front {
+    color: $text-color-footer;
+    font-weight: $font-medium;
+  }
+
+  &.front,
+  &.back {
+    transition: transform 1.2s;
+  }
+}
+
+.left {
+  &.front {
+    transform: translate(0, -50%) rotateY(0deg);
+  }
+
+  &.back {
+    backface-visibility: hidden;
+    transform: translate(0, -50%) rotateY(180deg);
+  }
+}
+
+.top {
+  &.front {
+    transform: translate(-50%, 0) rotateY(0deg);
+  }
+
+  &.back {
+    backface-visibility: hidden;
+    transform: translate(-50%, 0) rotateY(180deg);
+  }
+}
+
+.bottom {
+  &.front {
+    transform: translate(-50%, 0) rotateY(0deg);
+  }
+
+  &.back {
+    backface-visibility: hidden;
+    transform: translate(-50%, 0) rotateY(180deg);
+  }
+}
+
+.right {
+  &.front {
+    transform: translate(0, -50%) rotateY(0deg);
+  }
+
+  &.back {
+    backface-visibility: hidden;
+    transform: translate(0, -50%) rotateY(180deg);
+  }
+}

@@ -1,0 +1,78 @@
+@import "../../../variables";
+
+.input {
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(0, 212, 255, 0.1) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  border: none;
+  color: $console-text;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  font-family: Consolas, Menlo, Monaco, "Courier New", monospace;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:focus {
+    background-position: -200% 0;
+    animation: shimmer 2s infinite;
+    caret-color: $console-accent;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  }
+
+  &::selection {
+    background: rgba(0, 212, 255, 0.3);
+  }
+
+  &::placeholder {
+    color: rgba(147, 147, 147, 0.7);
+    font-style: italic;
+    transition: color 0.3s ease;
+  }
+
+  &:focus::placeholder {
+    color: rgba(147, 147, 147, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced blinking cursor effect */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.input:focus {
+  &::after {
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: $console-accent;
+    animation: blink 1s infinite;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+  }
+}

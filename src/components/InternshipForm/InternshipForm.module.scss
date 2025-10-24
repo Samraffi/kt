@@ -1,0 +1,19 @@
+@import "../../variables";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .title {
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    text-align: center;
+    max-width: 764px;
+    margin: 0 auto;
+  }
+}

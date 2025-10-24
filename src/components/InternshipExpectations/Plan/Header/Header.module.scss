@@ -1,0 +1,21 @@
+@import "../../../../variables";
+
+.accordion {
+  &_title {
+    font-size: 20px;
+    color: $middle-green;
+  }
+
+  &_button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    padding: 0;
+    width: auto;
+  }
+}
+
+.close {
+  transform: rotate(45deg);
+}

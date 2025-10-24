@@ -1,0 +1,13 @@
+@import "../../../variables";
+
+.messageOk {
+  color: $console-dot-green;
+}
+
+.messageHint {
+  color: $console-dot-yellow;
+}
+
+.messageError {
+  color: $error;
+}

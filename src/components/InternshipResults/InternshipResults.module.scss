@@ -1,0 +1,74 @@
+@import "../../variables";
+
+.results {
+  max-width: 1350px;
+  margin: 70px auto;
+  background-color: $background-light;
+  border-radius: 20px;
+
+  @include at-md {
+    margin: 50px auto;
+  }
+
+  @include at-sm {
+    margin: 40px auto;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include at-md {
+      flex-direction: column;
+      gap: 40px;
+      padding: 40px 15px;
+      text-align: center;
+    }
+
+    @include at-sm {
+      gap: 30px;
+      padding: 30px 15px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include at-md {
+      gap: 40px;
+    }
+
+    @include at-sm {
+      gap: 30px;
+    }
+
+    &_items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &_item {
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+
+  .internship__img {
+    @include at-md {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+
+    @include at-sm {
+      max-width: 300px;
+    }
+  }
+}

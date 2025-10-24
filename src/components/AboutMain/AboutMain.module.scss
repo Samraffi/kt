@@ -1,0 +1,54 @@
+@import "../../variables";
+
+.title {
+  flex: 1;
+}
+
+.about {
+  flex-basis: 670px;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 50px;
+
+  @include at-md {
+    flex-basis: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 40px;
+  }
+
+  @include at-sm {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    @include at-md {
+      margin-bottom: 30px;
+    }
+
+    @include at-sm {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.moreLink {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: $font-bold;
+  text-decoration: underline;
+
+  @include at-md {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @include at-sm {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

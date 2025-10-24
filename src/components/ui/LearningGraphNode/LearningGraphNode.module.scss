@@ -1,0 +1,213 @@
+@import "../../../variables";
+
+.nodeDefault {
+  background: rgba(0, 212, 255, 0.1);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 180px;
+  max-width: 220px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    background: rgba(0, 212, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+  }
+}
+
+.nodeInput {
+  @extend .nodeDefault;
+  background: rgba(33, 150, 243, 0.1);
+  border-color: rgba(33, 150, 243, 0.3);
+
+  &:hover {
+    background: rgba(33, 150, 243, 0.2);
+    border-color: rgba(33, 150, 243, 0.5);
+  }
+}
+
+.nodeOutput {
+  @extend .nodeDefault;
+  background: rgba(156, 39, 176, 0.1);
+  border-color: rgba(156, 39, 176, 0.3);
+
+  &:hover {
+    background: rgba(156, 39, 176, 0.2);
+    border-color: rgba(156, 39, 176, 0.5);
+  }
+}
+
+.nodeDecision {
+  @extend .nodeDefault;
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.3);
+  border-radius: 50%;
+
+  &:hover {
+    background: rgba(255, 193, 7, 0.2);
+    border-color: rgba(255, 193, 7, 0.5);
+  }
+}
+
+.nodeHovered {
+  @extend .nodeDefault;
+  background: rgba(0, 255, 136, 0.2);
+  border-color: rgba(0, 255, 136, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+}
+
+.nodeClicked {
+  @extend .nodeDefault;
+  background: rgba(0, 255, 136, 0.3);
+  border-color: rgba(0, 255, 136, 0.7);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 255, 136, 0.4);
+}
+
+.nodeCompleted {
+  @extend .nodeDefault;
+  background: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.6);
+  cursor: default;
+
+  &:hover {
+    background: rgba(76, 175, 80, 0.3);
+    border-color: rgba(76, 175, 80, 0.8);
+    transform: none;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  }
+}
+
+.nodeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  position: relative;
+}
+
+.nodeLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: $console-text;
+  text-align: center;
+  flex: 1;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.completedIcon {
+  font-size: 14px;
+  animation: bounceIn 0.5s ease-out;
+}
+
+.nodeTooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.tooltipContent {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 250px;
+  max-width: 400px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tooltipTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: $console-accent;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+  padding-bottom: 6px;
+}
+
+.tooltipDescription {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.tooltipHint {
+  font-size: 10px;
+  color: $console-success;
+  font-style: italic;
+}
+
+.tooltipArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.9);
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nodeDefault {
+    min-width: 100px;
+    padding: 10px 12px;
+  }
+
+  .nodeLabel {
+    font-size: 11px;
+  }
+
+  .tooltipContent {
+    min-width: 150px;
+    padding: 6px 10px;
+  }
+
+  .tooltipTitle {
+    font-size: 11px;
+  }
+
+  .tooltipDescription {
+    font-size: 10px;
+  }
+}

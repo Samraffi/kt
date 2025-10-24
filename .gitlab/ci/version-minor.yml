@@ -1,0 +1,47 @@
+# Version Minor Pipeline
+# Этот pipeline создает minor версию и публикует пакет
+# Запускается для main ветки
+
+image: node:18
+
+stages:
+  - version
+  - publish
+
+cache:
+  paths:
+    - node_modules/
+
+# Управление условиями пайплайна - только для main ветки
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+    - when: never
+
+# Создание minor версии
+version-minor-job:
+  stage: version
+  script:
+    - echo 'success'
+    # - |
+    #   if [ -z "$(git diff --name-only $CI_COMMIT_BEFORE_SHA $CI_COMMIT_SHA | grep -v 'package.json\|package-lock.json')" ]; then
+    #     echo "Only package files changed. Skipping version bump."
+    #     exit 0
+    #   fi
+    # - git config --global user.name "${GITLAB_USER_NAME}"
+    # - git config --global user.email "${GITLAB_USER_EMAIL}"
+    # - git remote set-url origin https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    # - npm version minor -m "Bump minor version [skip ci]"
+    # - git push origin HEAD:main --tags
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+# Публикация пакета после version bump
+# publish-minor-job:
+#   stage: publish
+#   needs:
+#     - job: version-minor-job
+#   script:
+#     - npm ci
+#     - npm publish --registry "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "main"'

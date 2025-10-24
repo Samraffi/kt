@@ -1,0 +1,40 @@
+@import "../../variables";
+
+.headingNote {
+  color: $plan-week;
+  margin-bottom: 20px;
+}
+
+.boardType {
+  border: 1px solid $plan-week;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: $plan-border;
+}
+
+.boardType h3 {
+  color: $dark-green;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.boardType p {
+  margin: 5px 0;
+  color: $plan-week;
+}
+
+.boardContext {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: $plan-border;
+  border-radius: 6px;
+  border-left: 4px solid $darkest-green;
+}
+
+.boardContext p {
+  margin: 0;
+  font-style: italic;
+  color: $plan-week;
+}

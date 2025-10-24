@@ -1,0 +1,24 @@
+@import "../../variables";
+
+.about {
+  background-color: $background-light;
+  padding: 100px 15px 0px;
+
+  @include at-md {
+    padding: 80px 15px 0px;
+  }
+
+  @include at-sm {
+    padding: 60px 15px 0px;
+  }
+
+  &__container {
+    @include responsive-container;
+    max-width: 890px;
+    margin: 0 auto;
+
+    @include at-md {
+      max-width: 100%;
+    }
+  }
+}

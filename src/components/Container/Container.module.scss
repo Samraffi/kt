@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.container {
+  margin: 0 auto;
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  flex: 1;
+  gap: 16px;
+  padding: 16px;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .gridLayout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px;
+    padding: 8px;
+  }
+}

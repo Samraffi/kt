@@ -1,0 +1,105 @@
+@import "../../variables";
+
+.header {
+  font-family: "PT-root";
+  font-weight: $font-medium;
+
+  &__container {
+    @include responsive-container;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include at-md {
+      padding: 20px 0;
+    }
+
+    @include at-sm {
+      padding: 15px 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @include at-md {
+      flex: 1;
+      justify-content: flex-start;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+
+    @include at-md {
+      margin-right: 20px;
+    }
+
+    @include at-sm {
+      margin-right: 15px;
+    }
+  }
+}
+
+.contact {
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    @include at-md {
+      gap: 30px;
+    }
+
+    @include at-sm {
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    height: 35px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @include at-sm {
+      height: 30px;
+    }
+  }
+
+  &__link-img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+.burger__menu {
+  color: $text-color-primary;
+  padding: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  @include at-sm {
+    padding: 6px;
+  }
+}
+
+.primary {
+  background-color: $background-light;
+}
+
+.secondary {
+  background-color: $background-main;
+}

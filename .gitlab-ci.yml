@@ -1,0 +1,24 @@
+# Main GitLab CI Pipeline
+# Подключает все специализированные pipeline файлы
+
+# Определяем все стадии, используемые в инклудах
+stages:
+  - build # для pull-request.yml
+  - test # для pull-request.yml
+  - version # для version-*.yml
+  - publish # для version-*.yml
+
+include:
+  - local: ".gitlab/ci/pull-request.yml"
+  - local: ".gitlab/ci/version-minor.yml"
+  - local: ".gitlab/ci/version-patch.yml"
+
+# Управление условиями пайплайна
+workflow:
+  rules:
+    # Pull Request pipeline
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    # Version pipelines
+    - if: '$CI_COMMIT_BRANCH == "main"'
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - when: never

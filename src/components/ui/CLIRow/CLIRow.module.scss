@@ -1,0 +1,95 @@
+@import "../../../variables";
+
+.promptRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  padding: 2px 0;
+  transition: all 0.2s ease;
+
+  &:last-child {
+    .prompt {
+      &::after {
+        animation: cursorBlink 1s infinite;
+      }
+    }
+  }
+
+  &:last-child:hover {
+    background: rgba(0, 212, 255, 0.05);
+    margin: 2px -4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .prompt {
+    color: $console-accent;
+    margin-right: 8px;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+    animation: promptPulse 2s ease-in-out infinite;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 14px;
+      background: $console-accent;
+      opacity: 0.7;
+    }
+  }
+}
+
+@keyframes promptPulse {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 0.7;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+/* Command type styling */
+.command {
+  color: $console-text;
+  font-weight: 500;
+
+  &.success {
+    color: $console-success;
+  }
+
+  &.error {
+    color: $console-error;
+  }
+
+  &.warning {
+    color: $console-warning;
+  }
+}

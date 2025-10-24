@@ -1,0 +1,156 @@
+@import "../../../variables";
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 212, 255, 0.05) 100%
+  );
+  border-radius: 8px;
+  padding: 16px;
+  min-height: 0;
+  border: 1px solid $console-accent;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(0, 212, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $console-accent 50%,
+      transparent 100%
+    );
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: $console-text;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $console-accent 30%,
+      $console-success 70%,
+      transparent 100%
+    );
+    opacity: 0.6;
+  }
+}
+
+.title {
+  margin-left: auto;
+  opacity: 0.9;
+  font-weight: 500;
+  color: $console-accent;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.commandsContent {
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-right: 8px;
+  color: $console-text;
+
+  /* Custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $console-accent, $console-success);
+    border-radius: 3px;
+
+    &:hover {
+      background: linear-gradient(180deg, $console-success, $console-accent);
+    }
+  }
+}
+
+/* Enhanced prompt styling */
+.prompt {
+  color: $console-accent;
+  margin-right: 8px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+  animation: promptPulse 2s ease-in-out infinite;
+}
+
+@keyframes promptPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .leftColumn {
+    padding: 12px;
+    min-height: 200px;
+    border-radius: 6px;
+  }
+
+  .commandsContent {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+}
+
+.scaledContent {
+  transform: scale($console-scale);
+  transform-origin: $console-scale-origin;
+  width: calc(100% * $console-width-scale);
+  height: calc(100% * $console-height-scale);
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  cursor: text;
+}
+
+.default {
+  cursor: default;
+}

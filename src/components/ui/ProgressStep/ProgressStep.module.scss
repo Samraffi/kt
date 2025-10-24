@@ -1,0 +1,111 @@
+@import "../../../variables";
+
+.currentStep {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+
+  &.completed {
+    opacity: 1;
+    color: $console-success;
+
+    .stepIndicator {
+      background: linear-gradient(135deg, $console-success, $console-accent);
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+    }
+  }
+
+  &.current {
+    opacity: 1;
+    color: $console-accent;
+    animation: stepPulse 2s ease-in-out infinite;
+
+    .stepIndicator {
+      background: linear-gradient(135deg, $console-accent, $console-success);
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+      animation: stepIndicatorPulse 2s ease-in-out infinite;
+    }
+  }
+
+  &.upcoming {
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.6);
+
+    .stepIndicator {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.stepIndicator {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.stepIcon {
+  font-size: 12px;
+  color: white;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.stepNumber {
+  color: $console-text;
+  font-size: 10px;
+}
+
+.stepLabel {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@keyframes stepPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes stepIndicatorPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .stepLabel {
+    font-size: 11px;
+  }
+}

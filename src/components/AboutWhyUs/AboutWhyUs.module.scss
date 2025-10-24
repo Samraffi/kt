@@ -1,0 +1,32 @@
+@import "../../variables";
+
+.whyUs {
+  padding: 70px 0;
+
+  @include at-md {
+    padding: 50px 0;
+  }
+
+  @include at-sm {
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    margin: 50px auto 0px;
+    max-width: 660px;
+
+    @include at-md {
+      margin: 40px auto 0px;
+      padding: 0 20px;
+    }
+
+    @include at-sm {
+      margin: 30px auto 0px;
+      padding: 0 15px;
+    }
+  }
+
+  &__wrapper:last-child {
+    margin-bottom: 0;
+  }
+}

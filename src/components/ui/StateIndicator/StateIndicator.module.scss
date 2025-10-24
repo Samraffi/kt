@@ -1,0 +1,45 @@
+@import "../../../variables";
+
+.contentStateIndicator {
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.stateBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.1) 0%,
+    rgba(0, 255, 136, 0.05) 100%
+  );
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  color: $console-accent;
+  animation: stateBadgePulse 3s ease-in-out infinite;
+}
+
+.stateIcon {
+  font-size: 12px;
+}
+
+.stateText {
+  opacity: 0.9;
+}
+
+@keyframes stateBadgePulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}

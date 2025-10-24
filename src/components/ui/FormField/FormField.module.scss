@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 670px;
+  margin: 0 auto;
+  padding: 50px 70px;
+
+  background-color: transparent;
+  border-radius: 45px;
+  border: 2px solid $text-color-primary;
+
+  @include at-md {
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 30px;
+    gap: 18px;
+  }
+
+  @include at-sm {
+    padding: 30px 30px;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  &__error {
+    color: $error;
+  }
+}

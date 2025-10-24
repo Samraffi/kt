@@ -1,0 +1,249 @@
+{
+  "navBar": {
+    "home": "Main",
+    "about": "About",
+    "projects": "Projects",
+    "internship": "Internship",
+    "practicum": "Practicum"
+  },
+  "aboutMenu": {},
+  "mainPage": {
+    "title": {
+      "h1": "Proven business solutions",
+      "span": " from experts"
+    },
+    "button": "Submit application",
+    "about": "— this is a team of experienced specialists who use modern technologies and innovative approaches to create high-quality products. We offer a wide range of services, including the development of customized software solutions, which allows us to adapt to the unique needs of each client.",
+    "projects": "Our projects",
+    "internship": {
+      "title": "Internship",
+      "description": "We invite you to become part of our internship team, which will give you a chance to immerse yourself in the exciting process of business process automation and software development. With us, you will gain unique experience working on real projects, master advanced technologies, and be able to implement your ideas in a dynamic and supportive environment. Join us and start your career in an innovative company where your talent and creativity will be appreciated!"
+    },
+    "applicationForm": {
+      "title": "We'll be happy to answer your questions",
+      "description": "Leave your contacts and we will get back to you"
+    },
+    "learnMore": {
+      "about": "More about the company",
+      "projects": "Learn more about the projects",
+      "internship": "Learn more about the internship"
+    }
+  },
+  "applicationPage": {
+    "title": "Application",
+    "content": "Application"
+  },
+  "projects": {
+    "project1": "Project 1",
+    "project2": "Project 2"
+  },
+  "aboutPage": {
+    "company": {
+      "title": "About the Company",
+      "description": "PluhSoft is a team of experts specializing in software development and business process automation. Our mission is to help businesses grow, become more efficient, and adapt to modern challenges. We create solutions that optimize company operations, reduce costs, and improve customer service quality.",
+      "cards": {
+        "automation": "Business Process Automation",
+        "development": "Software Development",
+        "internship": "Internships for Specialists"
+      }
+    },
+    "whyUs": {
+      "title": "Why Choose Us?",
+      "approach": {
+        "title": "Personalized Approach",
+        "description": "We study our clients' businesses and offer solutions that perfectly match their needs."
+      },
+      "expertise": {
+        "title": "Expertise",
+        "description": "Our team consists of specialists with deep technological knowledge and extensive project experience."
+      },
+      "communication": {
+        "title": "Transparent Communication",
+        "description": "We establish open dialogue with clients, explaining technical aspects in simple terms and always staying available to discuss any questions."
+      }
+    },
+    "contacts": {
+      "title": "Contacts",
+      "order": "Request a Service",
+      "internship": "Apply for an Internship",
+      "questionTG": "Ask a Question on Telegram"
+    }
+  },
+  "internshipPage": {
+    "title": "Internship",
+    "description": "We offer internships for aspiring professionals who want to immerse themselves in real projects, master modern tools, and gain practical experience in software development and business process automation.",
+    "results": {
+      "title": "Results",
+      "subtitle": "What you will gain after the internship",
+      "commercialExperience": "Commercial experience working on a project",
+      "teamworkSkills": "Teamwork skills",
+      "projectSkills": "Ability to create and defend projects",
+      "portfolio": "Portfolio for employment",
+      "interviewPractice": "Interview practice"
+    },
+    "plan": {
+      "info": "The internship includes clearly structured stages that will help you gradually master development processes, apply the knowledge you’ve gained in practice, and create your first fully-fledged project.",
+      "expectations": "What to expect?",
+      "timeline": "Work plan by months and weeks",
+      "important": "* The plan can be adapted depending on the number of interns, the complexity of current projects, and the tasks facing the team.",
+      "months": "3 months",
+      "hours": "40 hours",
+      "month1": "First month",
+      "week1": "Week 1",
+      "preparing": "Preparation and immersion",
+      "onboarding": "Onboarding",
+      "tools": "Setting up work tools",
+      "tasks": "Completing basic tasks",
+      "week2": "Week 2",
+      "start": "Starting work on the project",
+      "docker": "Mastering Docker-compose for infrastructure setup",
+      "env": "Working with environment variables",
+      "week3": "Week 3",
+      "processes": "Deep dive into processes",
+      "gitflow": "Configuring Gitflow",
+      "teamwork": "Teamwork: participating in planning, daily stand-ups, and code reviews",
+      "week4": "Week 4",
+      "prod": "First production release",
+      "POC": "Demo a Proof of Concept (POC) for one of the key features",
+      "conflict": "Resolving merge conflicts and practicing with multiple pull requests",
+      "pipeline": "Writing pipelines for CI/CD",
+      "month2": "Second month",
+      "week5": "Week 5",
+      "interviews": "Participation in interviews",
+      "interview": "Conducting interviews with other interns under mentor supervision",
+      "week6": "Week 6",
+      "finishFirst": "Completion of the first stage, start of work in an independent mode with minimal mentor involvement",
+      "week7": "Week 7",
+      "secondStage": "Transition to the second stage",
+      "independentPlanning": "Team independently plans and executes tasks",
+      "week8": "Week 8",
+      "finishProject": "Project completion",
+      "MVP": "Preparation of the MVP",
+      "month3": "Third month",
+      "week9": "9th week",
+      "hackathon": "Hackathon",
+      "idealProject": "Intensive work on the project to bring it to perfection",
+      "bugFixes": "Fixing all remaining bugs and polishing features",
+      "week10": "10th week",
+      "MVPPresentation": "MVP presentation",
+      "MVPFinish": "Completion of the Minimum Viable Product (MVP)",
+      "FinalTesting": "Final testing and verification",
+      "week11": "11th week",
+      "defensePreparing": "Preparation for defense",
+      "documentation": "Creating documentation and materials for project defense",
+      "demoPreparing": "Preparation for the demo",
+      "week12": "12th week",
+      "defense": "Internship defense",
+      "demo": "Demonstration of the project",
+      "perfomanceReview": "Final performance review by mentors",
+      "CV": "Resume preparation and defense"
+    },
+    "hexagons": {
+      "daily": "Daily",
+      "currentTasks": "Discussion of current issues and tasks",
+      "planning": "Planning",
+      "weekTasks": "Task distribution for the week",
+      "review": "Code review",
+      "connection": "Code feedback and guidance on fixing errors",
+      "demo": "Demo",
+      "presentation": "Presentation of added features, documentation, and solutions",
+      "calls": "Calls",
+      "callsInfo": "Regular calls are an important part of the internship. They help establish teamwork, clarify tasks, and receive timely feedback."
+    },
+    "form": {
+      "ready": "Ready to join the team?",
+      "contacts": "Leave your contact details and write a short cover letter explaining why you'd like to intern with us.",
+      "email": "Invalid email",
+      "linkedin": "Invalid URL",
+      "requiredField": "Required field",
+      "submit": "Submit",
+      "whyIWant": "Why I want to get an internship",
+      "noLinkedin": "No LinkedIn Provided"
+    }
+  },
+  "projectsPage": {
+    "title": "Our Projects",
+    "getToKnow": "Explore examples of successful projects completed by our company",
+    "solutions": "Solutions",
+    "results": "Results",
+    "companyGot": "The company achieved the following results:",
+    "problem": "Business Problem",
+    "projects": [
+      {
+        "title": "Dilijan1",
+        "descr": "We implemented a solution that optimized order distribution, reduced vehicle dispatch time, and lowered operating costs. Thanks to the automation of business processes, the taxi service improved the quality of customer service and increased its profits.",
+        "problem": "The company faced difficulties in managing orders and distributing drivers, which led to delays and reduced customer service quality. The business required a modern automation system to optimize processes and enhance efficiency.",
+        "solutions": [
+          {
+            "solution": "We developed a mobile application that allows customers to quickly request a ride or cancel an order if necessary",
+            "results": [
+              "Reduced waiting time for order confirmation",
+              "Decreased dispatcher workload"
+            ]
+          },
+          {
+            "solution": "We developed a mobile application that allows customers to quickly request a ride or cancel an order if necessary",
+            "results": [
+              "Reduced waiting time for order confirmation",
+              "Decreased dispatcher workload"
+            ]
+          },
+          {
+            "solution": "We developed a mobile application that allows customers to quickly request a ride or cancel an order if necessary",
+            "results": [
+              "Reduced waiting time for order confirmation",
+              "Decreased dispatcher workload"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Dilijan2",
+        "descr": "We implemented a solution that optimized order distribution, reduced vehicle dispatch time, and lowered operating costs. Thanks to the automation of business processes, the taxi service improved the quality of customer service and increased its profits.",
+        "problem": "The company faced difficulties in managing orders and distributing drivers, which led to delays and reduced customer service quality. The business required a modern automation system to optimize processes and enhance efficiency.",
+        "solutions": [
+          {
+            "solution": "We developed a mobile application that allows customers to quickly request a ride or cancel an order if necessary",
+            "results": [
+              "Reduced waiting time for order confirmation",
+              "Decreased dispatcher workload"
+            ]
+          },
+          {
+            "solution": "We developed a mobile application that allows customers to quickly request a ride or cancel an order if necessary",
+            "results": [
+              "Reduced waiting time for order confirmation",
+              "Decreased dispatcher workload"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "applicationMain": {
+    "form": {
+      "email": "Your email*",
+      "emailRequired": "Specify the email address",
+      "emailInvalid": "Incorrect data",
+      "name": "What is your name?*",
+      "nameRequired": "Enter a name",
+      "business": "Type of business",
+      "count": "Number of employees and clients",
+      "link": "Link to the company's website",
+      "description": "Describe the business problem that needs to be solved*",
+      "descriptionRequired": "Describe the problem",
+      "button": "Submit",
+      "medicine": "Medicine",
+      "sport": "Sport",
+      "finances": "Finances",
+      "other": "Other"
+    },
+    "message": "Hello, my name is {{name}}.\n{{description}}.\nMy email is {{email}}.\n{{employees}}{{website}}{{business}}",
+    "employeesText": "Number of employees: {{employees}}.\n",
+    "websiteText": "Website: {{website}}.\n"
+  },
+  "modalForm": {
+    "title": "Thank you!",
+    "description": "We will contact you shortly."
+  }
+}

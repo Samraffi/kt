@@ -1,0 +1,19 @@
+@import "../../../variables";
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background-color: $console-dot-red;
+}
+
+.dotYellow {
+  background-color: $console-dot-yellow;
+}
+
+.dotGreen {
+  background-color: $console-dot-green;
+}

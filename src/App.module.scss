@@ -1,0 +1,61 @@
+@import "../src/variables";
+
+@font-face {
+  font-family: "PT-Root";
+  src: url("../public/fonts/pt-root-ui_light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT-Root";
+  src: url("../public/fonts/pt-root-ui_regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT-Root";
+  src: url("../public/fonts/pt-root-ui_medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PT-Root";
+  src: url("../public/fonts/pt-root-ui_bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $text-color-primary;
+  font-family: "PT-Root", sans-serif;
+  font-weight: $font-regular;
+  background-color: $background-main;
+}
+
+a,
+button {
+  font-family: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+}

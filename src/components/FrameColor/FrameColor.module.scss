@@ -1,0 +1,15 @@
+@import "../../variables";
+
+.frameColor {
+  background-color: $darkest-green;
+  padding: 50px 70px;
+  color: $text-color-secondary;
+
+  @include at-md {
+    padding: 40px 50px;
+  }
+
+  @include at-sm {
+    padding: 30px 30px;
+  }
+}

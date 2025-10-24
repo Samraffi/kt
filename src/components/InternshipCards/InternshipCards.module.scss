@@ -1,0 +1,27 @@
+@import "../../variables";
+
+.hexagons {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 100px;
+  padding: 70px 15px;
+  align-items: center;
+
+  @include at-md {
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 15px;
+  }
+
+  @include at-sm {
+    gap: 30px;
+    padding: 40px 15px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}

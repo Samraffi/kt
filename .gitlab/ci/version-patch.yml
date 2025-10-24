@@ -1,0 +1,47 @@
+# Version Patch Pipeline
+# Этот pipeline создает patch версию и публикует пакет
+# Запускается для develop ветки
+
+image: node:18
+
+stages:
+  - version
+  - publish
+
+cache:
+  paths:
+    - node_modules/
+
+# Управление условиями пайплайна - только для develop ветки
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+    - when: never
+
+# Создание patch версии
+version-patch-job:
+  stage: version
+  script:
+    - |
+      if [ -z "$(git diff --name-only $CI_COMMIT_BEFORE_SHA $CI_COMMIT_SHA | grep -v 'package.json\|package-lock.json')" ]; then
+        echo "Only package files changed. Skipping version bump."
+        exit 0
+      fi
+    - git config --global user.name "${GITLAB_USER_NAME}"
+    - git config --global user.email "${GITLAB_USER_EMAIL}"
+    - git remote set-url origin https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    - npm version patch -m "Bump patch version [skip ci]"
+    - git push origin HEAD:develop --tags
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+
+# Публикация пакета после version bump
+publish-patch-job:
+  stage: publish
+  needs:
+    - job: version-patch-job
+  script:
+    - npm ci
+    - npm publish --registry "https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'

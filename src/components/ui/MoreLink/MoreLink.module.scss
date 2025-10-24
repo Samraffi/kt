@@ -1,0 +1,18 @@
+@import "../../../variables";
+
+.moreLink {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: $font-bold;
+  text-decoration: underline;
+
+  @include at-md {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @include at-sm {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

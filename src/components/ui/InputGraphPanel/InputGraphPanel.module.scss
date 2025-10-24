@@ -1,0 +1,81 @@
+@import "../../../variables";
+
+.leftColumn {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.scaledContent {
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.default {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.text {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: $console-accent;
+  margin-left: 8px;
+}
+
+.commandsContent {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 212, 255, 0.3) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.3);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.5);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .leftColumn {
+    padding: 15px;
+  }
+
+  .header {
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

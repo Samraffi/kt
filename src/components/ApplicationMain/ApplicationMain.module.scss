@@ -1,0 +1,148 @@
+@import "../../variables";
+
+.formWrapper {
+  position: relative;
+  padding-top: 70px;
+
+  @include at-md {
+    padding-top: 50px;
+  }
+
+  @include at-sm {
+    padding-top: 30px;
+  }
+
+  @include at-md {
+    padding-top: 50px;
+  }
+
+  @include at-sm {
+    padding-top: 30px;
+  }
+
+  @include at-md {
+    padding-top: 50px;
+  }
+
+  @include at-sm {
+    padding-top: 30px;
+  }
+
+  @include at-md {
+    padding-top: 50px;
+  }
+
+  @include at-sm {
+    padding-top: 30px;
+  }
+}
+
+.applicationForm {
+  &__info {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include at-md {
+      width: 100%;
+      gap: 25px;
+      text-align: center;
+      align-items: center;
+    }
+
+    @include at-sm {
+      gap: 20px;
+    }
+  }
+
+  @include at-md {
+    width: 100%;
+    gap: 25px;
+    text-align: center;
+    align-items: center;
+  }
+
+  @include at-sm {
+    gap: 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 670px;
+  margin: 0 auto;
+  padding: 50px 70px;
+  background-color: transparent;
+  border-radius: 45px;
+  border: 2px solid $text-color-primary;
+
+  @include at-md {
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 30px;
+  }
+
+  @include at-sm {
+    padding: 30px 30px;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  @include at-md {
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 30px;
+  }
+
+  @include at-sm {
+    padding: 30px 30px;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  @include at-md {
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 30px;
+  }
+
+  @include at-sm {
+    padding: 30px 30px;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  @include at-md {
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 30px;
+  }
+
+  @include at-sm {
+    padding: 30px 30px;
+    border-radius: 20px;
+    gap: 15px;
+  }
+
+  &__error {
+    color: $error;
+  }
+}
+
+.hexagonApplicationMain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @include at-md {
+    width: 60%;
+    height: auto;
+  }
+
+  @include at-sm {
+    width: 50%;
+  }
+}

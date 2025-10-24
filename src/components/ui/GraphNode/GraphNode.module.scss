@@ -1,0 +1,239 @@
+// Node styles extracted from Graph.module.scss
+.nodeDefault {
+  background: #fff;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 6px 8px;
+  min-width: 80px;
+  max-width: 120px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+  }
+}
+
+.nodeInput {
+  background: #e3f2fd;
+  border: 1px solid #2196f3;
+  border-radius: 6px;
+  padding: 6px 8px;
+  min-width: 80px;
+  max-width: 120px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(33, 150, 243, 0.2);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(33, 150, 243, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+.nodeOutput {
+  background: #e8f5e8;
+  border: 1px solid #4caf50;
+  border-radius: 6px;
+  padding: 6px 8px;
+  min-width: 80px;
+  max-width: 120px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(76, 175, 80, 0.2);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+.nodeDecision {
+  background: #fff3e0;
+  border: 1px solid #ff9800;
+  border-radius: 6px;
+  padding: 6px 8px;
+  min-width: 80px;
+  max-width: 120px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(255, 152, 0, 0.2);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(255, 152, 0, 0.3);
+    transform: translateY(-1px);
+  }
+}
+
+.nodeContent {
+  position: relative;
+}
+
+.nodeLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: #333;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+.nodeTooltip {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 350px;
+  min-width: 200px;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.tooltipContent {
+  position: relative;
+}
+
+.tooltipTitle {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #fff;
+  border-bottom: 1px solid #555;
+  padding-bottom: 4px;
+}
+
+.tooltipDescription {
+  font-size: 11px;
+  color: #e0e0e0;
+  line-height: 1.4;
+}
+
+.tooltipArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #333;
+}
+
+// Topic Selector Node Styles
+.topicSelectorNode {
+  background: #f8f9fa;
+  border: 2px solid #6c757d;
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 200px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+.topicDropdown {
+  margin-top: 10px;
+  position: relative;
+}
+
+.dropdownButton {
+  width: 100%;
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f8f9fa;
+    border-color: #6c757d;
+  }
+
+  &.open {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+}
+
+.arrow {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+.dropdownButton.open .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 2px;
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: #f8f9fa;
+  }
+
+  &:first-child {
+    border-radius: 6px 6px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+.selectedTopicInfo {
+  margin-top: 10px;
+  padding: 8px;
+  background: #e7f3ff;
+  border: 1px solid #b3d9ff;
+  border-radius: 6px;
+}
+
+.topicDescription {
+  font-size: 11px;
+  color: #0066cc;
+  font-weight: 500;
+}

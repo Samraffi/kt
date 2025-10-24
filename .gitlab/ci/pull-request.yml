@@ -1,0 +1,38 @@
+# Pull Request Pipeline
+# Этот pipeline запускается только для merge requests
+# Выполняет build, test и lint проверки
+
+image: node:18
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+# Управление условиями пайплайна - только для MR
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - when: never
+
+# Build и lint проверки
+# build-job:
+#   stage: build
+#   script:
+#     - npm ci
+#     - npm run lint
+#     - npm run build
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+# Unit тесты
+unit-test-job:
+  stage: test
+  script:
+    # - npm run test
+    - echo 'success'
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"

@@ -1,0 +1,25 @@
+@import "../../../variables";
+
+.textareaField {
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 30px;
+  height: 154px;
+  font-family: "PT-Root", sans-serif;
+  font-size: 14px;
+  font-weight: $font-regular;
+  color: $text-color-primary;
+  border-radius: 8px;
+  border: none;
+  background-color: $background-form;
+  resize: none;
+
+  &::placeholder {
+    color: $text-color-primary;
+  }
+
+  &:focus {
+    border-color: $dark-green;
+    outline: none;
+  }
+}

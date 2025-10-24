@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.definition {
+  text-align: center;
+  font-style: italic;
+  color: $plan-week;
+  margin-bottom: 20px;
+  font-weight: $font-regular;
+}
+
+.text {
+  margin-top: 15px;
+  font-weight: $font-regular;
+}

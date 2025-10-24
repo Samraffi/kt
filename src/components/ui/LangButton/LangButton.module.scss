@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+.langSwitcher {
+  position: relative;
+
+  &__button {
+    width: 35px;
+    height: 35px;
+    background: transparent;
+    border: 1px solid $text-color-primary;
+    padding: 9px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: $text-color-primary;
+  }
+
+  &__languages {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    right: 0;
+    width: 35px;
+    margin-top: 7px;
+    background-color: transparent;
+    border: 1px solid $text-color-primary;
+    border-radius: 6px;
+    list-style: none;
+    z-index: 1000;
+  }
+}

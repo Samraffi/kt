@@ -1,0 +1,753 @@
+@import "../../../variables";
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(0, 212, 255, 0.03) 100%
+  );
+  border-radius: 8px;
+  border: 1px solid $console-accent;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(0, 212, 255, 0.05);
+  position: relative;
+
+  /* Compact scrollbar for right column */
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $console-accent, $console-success);
+    border-radius: 2px;
+
+    &:hover {
+      background: linear-gradient(180deg, $console-success, $console-accent);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $console-accent 50%,
+      transparent 100%
+    );
+  }
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 1200px) {
+  .rightColumn {
+    padding: 10px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .rightColumn {
+    padding: 8px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rightColumn {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+}
+
+.taskSection,
+.hintsSection,
+.feedbackSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0, 212, 255, 0.05);
+  border-radius: 6px;
+  border-left: 3px solid $console-accent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(0, 212, 255, 0.08);
+    transform: translateX(2px);
+  }
+}
+
+/* Compact layout for smaller screens */
+@media (max-width: 1200px) {
+  .taskSection,
+  .hintsSection,
+  .feedbackSection {
+    padding: 10px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .taskSection,
+  .hintsSection,
+  .feedbackSection {
+    padding: 8px;
+    gap: 4px;
+  }
+}
+
+.taskTitle,
+.hintsTitle,
+.feedbackTitle {
+  color: $console-accent;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, $console-accent, transparent);
+    border-radius: 1px;
+  }
+}
+
+.taskText,
+.feedbackText {
+  color: $console-text;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 8px;
+  border-left: 2px solid rgba(0, 212, 255, 0.3);
+}
+
+.hintsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hintItem {
+  color: $console-text;
+  font-size: 13px;
+  padding: 8px 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 170, 0, 0.1) 0%,
+    rgba(255, 170, 0, 0.05) 100%
+  );
+  border-radius: 6px;
+  opacity: 0.9;
+  border-left: 2px solid $console-warning;
+  transition: all 0.3s ease;
+  cursor: help;
+  position: relative;
+
+  &::before {
+    content: "💡";
+    margin-right: 8px;
+    font-size: 12px;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 170, 0, 0.15) 0%,
+      rgba(255, 170, 0, 0.08) 100%
+    );
+    transform: translateX(4px);
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(255, 170, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateX(2px);
+  }
+}
+
+/* Stage indicator styles */
+.stageIndicator {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.1) 0%,
+    rgba(0, 255, 136, 0.05) 100%
+  );
+  border-radius: 6px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $console-accent 50%,
+      transparent 100%
+    );
+  }
+
+  /* Responsive stage indicator */
+  @media (max-width: 1200px) {
+    padding: 10px;
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 8px;
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+}
+
+.stageTitle {
+  color: $console-accent;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+.stageBadge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: stageSlideIn 0.4s ease-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+
+  &.welcome {
+    background: linear-gradient(
+      135deg,
+      rgba(33, 150, 243, 0.2) 0%,
+      rgba(33, 150, 243, 0.1) 100%
+    );
+    border-color: #2196f3;
+    color: #2196f3;
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.3);
+  }
+
+  &.menu {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 193, 7, 0.2) 0%,
+      rgba(255, 193, 7, 0.1) 100%
+    );
+    border-color: #ffc107;
+    color: #ffc107;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+  }
+
+  &.task_selected {
+    background: linear-gradient(
+      135deg,
+      rgba(129, 199, 132, 0.2) 0%,
+      rgba(129, 199, 132, 0.1) 100%
+    );
+    border-color: #81c784;
+    color: #81c784;
+    box-shadow: 0 0 15px rgba(129, 199, 132, 0.3);
+  }
+
+  &.command_input {
+    background: linear-gradient(
+      135deg,
+      rgba(233, 30, 99, 0.2) 0%,
+      rgba(233, 30, 99, 0.1) 100%
+    );
+    border-color: #e91e63;
+    color: #e91e63;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+    animation: pulseCommand 2s ease-in-out infinite;
+  }
+}
+
+@keyframes stageSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseCommand {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(233, 30, 99, 0.5);
+  }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .rightColumn {
+    padding: 8px;
+    min-height: 200px;
+  }
+
+  .taskTitle,
+  .hintsTitle,
+  .feedbackTitle {
+    font-size: 14px;
+  }
+
+  .taskText,
+  .feedbackText {
+    font-size: 12px;
+  }
+
+  .hintItem {
+    font-size: 11px;
+  }
+}
+
+/* Status styles */
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: statusSlideIn 0.3s ease-out;
+
+  &.idle {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+  }
+
+  &.success,
+  &.ok {
+    border-color: $console-success;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 255, 136, 0.15) 0%,
+      rgba(0, 255, 136, 0.08) 100%
+    );
+    animation: successPulse 2s ease-in-out infinite;
+  }
+
+  &.error {
+    border-color: $console-error;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 82, 82, 0.15) 0%,
+      rgba(255, 82, 82, 0.08) 100%
+    );
+    animation: errorShake 0.5s ease-in-out;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.statusIcon {
+  padding-left: 8px;
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 4px currentColor);
+
+  .statusContainer.success & {
+    animation: successIconBounce 0.6s ease-out;
+  }
+
+  .statusContainer.error & {
+    animation: errorIconShake 0.5s ease-in-out;
+  }
+}
+
+@keyframes successIconBounce {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes errorIconShake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-3px) rotate(-5deg);
+  }
+  75% {
+    transform: translateX(3px) rotate(5deg);
+  }
+}
+
+/* Theory section styles */
+.theorySection {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 193, 7, 0.15) 0%,
+    rgba(255, 193, 7, 0.08) 100%
+  );
+  border: 2px solid $console-warning;
+  border-radius: 8px;
+  padding: 16px;
+  animation: theorySlideIn 0.4s ease-out;
+  position: relative;
+  box-shadow:
+    0 4px 20px rgba(255, 193, 7, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive theory section */
+@media (max-width: 1200px) {
+  .theorySection {
+    max-height: 250px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .theorySection {
+    max-height: 200px;
+    padding: 10px;
+  }
+}
+.theoryTitle {
+  color: $console-warning;
+  margin: 0 0 16px 0;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.3);
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, $console-warning, transparent);
+    border-radius: 1px;
+  }
+}
+
+.theoryContent {
+  color: $console-text;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  padding-left: 12px;
+  border-left: 2px solid rgba(255, 193, 7, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 6px 6px 0;
+  padding-bottom: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+
+  /* Horizontal scroll for very long content */
+  overflow-x: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $console-warning 50%,
+      transparent 100%
+    );
+    border-radius: 1px;
+  }
+
+  /* Custom scrollbar for theory section */
+  &::-webkit-scrollbar {
+    scrollbar-width: thin;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 193, 7, 0.2);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      90deg,
+      $console-warning,
+      darken($console-warning, 20%)
+    );
+    border-radius: 3px;
+
+    &:hover {
+      background: linear-gradient(
+        90deg,
+        darken($console-warning, 20%),
+        $console-warning
+      );
+    }
+  }
+}
+
+/* Animation keyframes */
+@keyframes statusSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes theorySlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Compact theory details for limited space */
+.theoryDetails {
+  background: rgba(255, 193, 7, 0.05);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.theorySummary {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: $console-warning;
+  list-style: none;
+  transition: all 0.3s ease;
+
+  &::marker {
+    display: none;
+  }
+
+  &:hover {
+    background: rgba(255, 193, 7, 0.1);
+    color: lighten($console-warning, 10%);
+  }
+}
+
+.theoryDetails[open] .theorySummary {
+  background: rgba(255, 193, 7, 0.1);
+  border-bottom: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 6px 6px 0 0;
+}
+
+.theoryDetails .theoryContent {
+  padding: 12px;
+  border-top: 1px solid rgba(255, 193, 7, 0.3);
+  font-size: 13px;
+  line-height: 1.4;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* Smooth transitions for content switching */
+.hintsSection,
+.theorySection {
+  animation: contentFadeIn 0.3s ease-out;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced visual feedback for content states */
+.contentHint {
+  position: relative;
+
+  &::after {
+    content: "💡";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(
+      135deg,
+      $console-warning,
+      darken($console-warning, 20%)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+    animation: hintPulse 2s ease-in-out infinite;
+  }
+}
+
+.contentTheory {
+  position: relative;
+
+  &::after {
+    content: "📚";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(
+      135deg,
+      $console-accent,
+      darken($console-accent, 20%)
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    animation: theoryPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes hintPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes theoryPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.scaledContent {
+  transform: scale($console-scale);
+  transform-origin: $console-scale-origin;
+  width: calc(100% * $console-width-scale);
+  height: calc(100% * $console-height-scale);
+  display: flex;
+  flex-direction: column;
+}

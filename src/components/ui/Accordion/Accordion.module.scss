@@ -1,0 +1,28 @@
+@import "../../../variables";
+
+.accordion {
+  flex: 1;
+  padding: 20px;
+  border-radius: 20px;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s;
+  }
+
+  &_content {
+    overflow: hidden;
+    grid-row: 1 / span 2;
+  }
+}
+
+.expanded {
+  grid-template-rows: 1fr;
+}

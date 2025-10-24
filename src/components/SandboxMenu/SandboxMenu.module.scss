@@ -1,0 +1,82 @@
+@import "../../variables";
+
+.dropdownContainer {
+  position: relative;
+  width: 280px;
+  margin: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dropdownHeader {
+  color: $text-color-footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid $darkest-green;
+  border-radius: 8px;
+  background-color: $dark-green;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropdownHeader:hover {
+  border-color: $darkest-green;
+}
+
+.open {
+  border-color: $darkest-green;
+  box-shadow: 0 0 0 3px $middle-green;
+}
+
+.dropdownTitle {
+  color: $text-color-footer;
+}
+
+.dropdownArrow {
+  transition: transform 0.2s;
+  font-size: 10px;
+  color: $text-color-footer;
+}
+
+.open .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin: 13px 0 0 0;
+  border: 1px solid $background-main;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 6px 15px $darkest-green;
+  overflow: hidden;
+}
+
+.dropdownItem {
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.dropdownItem:hover {
+  background-color: $background-main;
+}
+
+.selected {
+  background-color: $background-main;
+  color: $dark-green;
+  font-weight: 500;
+}
+
+// Align nested educational sections' width with the surrounding layout (avoid double Box padding)
+.fullWidthSection {
+  margin-left: -180px;
+  margin-right: -180px;
+}

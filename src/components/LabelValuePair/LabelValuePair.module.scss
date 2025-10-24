@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.center {
+  text-align: center;
+}
+
+.labelValuePair {
+  font-weight: $font-medium;
+  color: $text-color-primary;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}

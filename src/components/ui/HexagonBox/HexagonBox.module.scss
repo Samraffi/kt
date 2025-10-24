@@ -1,0 +1,65 @@
+@import "../../../variables";
+
+.hexagon {
+  position: relative;
+  resize: both;
+
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.green {
+  stroke: $middle-green;
+
+  &__fill svg {
+    fill: $middle-green;
+  }
+}
+
+.darkgreen {
+  stroke: $dark-green;
+
+  &__fill svg {
+    fill: $dark-green;
+  }
+}
+
+.yellow {
+  stroke: $yellow;
+
+  &__fill svg {
+    fill: $yellow;
+  }
+}
+
+.darkestgreen {
+  stroke: $darkest-green;
+
+  &__fill svg {
+    fill: $darkest-green;
+  }
+}
+
+.grey {
+  stroke: $plan-border;
+
+  &__fill svg {
+    fill: $plan-border;
+  }
+}

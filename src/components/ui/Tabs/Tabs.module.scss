@@ -1,0 +1,44 @@
+@import "../../../variables";
+
+.root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 2px solid $background-main;
+}
+
+.tab {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: $text-color-primary;
+  font-size: 16px;
+  font-weight: $font-medium;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &:hover {
+    color: $dark-green;
+    background-color: $background-main;
+  }
+}
+
+.active {
+  color: $dark-green;
+  border-bottom-color: $dark-green;
+  background-color: $background-main;
+
+  &:hover {
+    color: $dark-green;
+  }
+}
+
+.panel {
+  min-height: 200px;
+}

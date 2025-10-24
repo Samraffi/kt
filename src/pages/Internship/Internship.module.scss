@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.internship {
+  background-color: $background-main;
+  padding: 138px 0;
+
+  @include at-md {
+    padding: 100px 0;
+  }
+
+  @include at-sm {
+    padding: 80px 0;
+  }
+}

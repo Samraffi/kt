@@ -1,0 +1,9 @@
+@import "../../variables";
+
+.title {
+  color: $darkest-green;
+  border-bottom: 2px solid $darkest-green;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  display: block;
+}

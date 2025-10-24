@@ -1,0 +1,28 @@
+@import "../../variables";
+
+// Description section styling
+.descriptionSection {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: $background-light;
+  border-radius: 8px;
+  border: 1px solid $plan-border;
+}
+
+// Graph section styling
+.graphSection {
+  margin-top: 20px;
+  transition: all 0.3s ease;
+
+  &.graphHighlight {
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+    border-radius: 8px;
+    background-color: rgba(33, 150, 243, 0.05);
+  }
+}
+
+// Remove the old fullWidthSection since we moved description inside Card
+// .fullWidthSection {
+//   margin-left: -180px;
+//   margin-right: -180px;
+// }

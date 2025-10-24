@@ -1,0 +1,15 @@
+@import "../../variables";
+
+.section {
+  background-color: $background-main;
+  border: 1px solid $plan-border;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.subSection {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}

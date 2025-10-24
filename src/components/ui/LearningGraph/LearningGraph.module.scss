@@ -1,0 +1,308 @@
+@import "../../../variables";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.graphHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 212, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.graphTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: $console-accent;
+}
+
+.learningMode {
+  padding: 6px 12px;
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $console-success;
+}
+
+.checkButton {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  border: 2px solid #4caf50;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background: rgba(128, 128, 128, 0.3);
+    border-color: rgba(128, 128, 128, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+  }
+}
+
+.graphContainer {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+.reactFlow {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.validationFeedback {
+  margin: 15px 20px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid;
+  animation: slideIn 0.3s ease;
+
+  &.success {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: #4caf50;
+  }
+
+  &.warning {
+    background: rgba(255, 152, 0, 0.1);
+    border-color: #ff9800;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feedbackHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feedbackTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+.feedbackMessage {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.feedbackStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.missingConnections {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.missingTitle {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.missingList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.missingItem {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+
+  strong {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+.missingHint {
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+  color: #ffa726;
+  font-size: 11px;
+}
+
+.instructions {
+  padding: 15px 20px;
+  background: rgba(255, 193, 7, 0.1);
+  border-top: 1px solid rgba(255, 193, 7, 0.3);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+
+  h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffc107;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 16px;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 4px;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: -12px;
+      color: #ffc107;
+    }
+
+    strong {
+      color: #ffc107;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .graphHeader {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .headerLeft {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .graphTitle {
+    font-size: 14px;
+  }
+
+  .learningMode {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .checkButton {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .validationFeedback {
+    margin: 12px 15px;
+    padding: 12px;
+  }
+
+  .feedbackStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instructions {
+    padding: 12px 15px;
+  }
+}

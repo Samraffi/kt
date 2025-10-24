@@ -1,0 +1,78 @@
+@import "../../../variables";
+
+.plan {
+  max-width: 1000px;
+  padding: 0 15px;
+  margin: 0 auto 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+
+  .accordion {
+    background-color: $background-main;
+  }
+
+  &__item {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__item:not(:last-child)::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    background-color: $plan-border;
+    left: 13px;
+    height: calc(100% + 36px);
+    top: 25px;
+  }
+
+  &__mark {
+    padding-top: 18px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__accordion {
+    flex: 1;
+    padding: 20px;
+    background-color: $background-main;
+    border-radius: 20px;
+
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &_title {
+      font-size: 20px;
+      color: $middle-green;
+    }
+
+    &_button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &_body {
+      background-color: red;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s;
+    }
+
+    &_content {
+      overflow: hidden;
+      grid-row: 1 / span 2;
+    }
+  }
+}
+
+.expanded {
+  grid-template-rows: 1fr;
+}

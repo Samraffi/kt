@@ -1,0 +1,80 @@
+@import "../../variables";
+
+.projects {
+  background-color: $background-light;
+  position: relative;
+
+  .container {
+    @include responsive-container;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 129px 15px 70px;
+
+    @include at-md {
+      padding: 100px 15px 50px;
+    }
+
+    @include at-sm {
+      padding: 80px 15px 40px;
+    }
+  }
+
+  .info {
+    max-width: 600px;
+    margin-bottom: 160px;
+    z-index: 100;
+    position: relative;
+
+    @include at-md {
+      max-width: 100%;
+      margin-bottom: 120px;
+      text-align: center;
+    }
+
+    @include at-sm {
+      margin-bottom: 80px;
+    }
+  }
+
+  .title {
+    margin-bottom: 30px;
+
+    @include at-sm {
+      margin-bottom: 20px;
+      text-align: start;
+    }
+  }
+
+  .subtitle {
+    font-size: 20px;
+    font-weight: normal;
+
+    @include at-md {
+      font-size: 18px;
+    }
+
+    @include at-sm {
+      font-size: 16px;
+    }
+  }
+
+  .hexagons {
+    position: absolute;
+    top: 47px;
+    right: 15px;
+
+    @include at-md {
+      top: 30px;
+      right: 10px;
+      width: 60%;
+      height: auto;
+    }
+
+    @include at-sm {
+      top: 10px;
+      right: 5px;
+      width: 50%;
+    }
+  }
+}

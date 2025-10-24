@@ -1,0 +1,70 @@
+@import "../../variables";
+
+.internshipMain {
+  &__color {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 70px;
+    background-color: $darkest-green;
+    border-radius: 30px;
+    color: $background-main;
+
+    @include at-md {
+      flex-direction: column;
+      padding: 40px 50px;
+      gap: 30px;
+      border-radius: 20px;
+    }
+
+    @include at-sm {
+      padding: 30px 30px;
+      gap: 20px;
+      border-radius: 15px;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+
+    @include at-md {
+      width: 100%;
+      max-width: 400px;
+      align-self: center;
+    }
+
+    @include at-sm {
+      max-width: 300px;
+    }
+  }
+
+  &__content {
+    width: 670px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-weight: 400;
+
+    @include at-md {
+      width: 100%;
+      gap: 25px;
+      text-align: center;
+      align-items: center;
+    }
+
+    @include at-sm {
+      gap: 20px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 20px;
+
+    @include at-sm {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../variables";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__week {
+    color: $plan-week;
+    margin-top: 8px;
+  }
+
+  ul {
+    padding-left: 40px;
+    flex-direction: column;
+    list-style: initial;
+  }
+}

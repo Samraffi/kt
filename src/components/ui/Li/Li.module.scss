@@ -1,0 +1,14 @@
+@import "../../../variables";
+
+.listItem {
+  color: $text-color-primary;
+  background-color: $plan-border;
+  border-left: 2px solid $text-color-primary;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.listItem:last-child {
+  margin-bottom: 0;
+}

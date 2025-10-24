@@ -1,0 +1,23 @@
+@import "../../../variables";
+
+.selectField {
+  width: 100%;
+  height: 50px;
+  padding-left: 30px;
+  font-family: "PT-Root", sans-serif;
+  font-size: 14px;
+  font-weight: $font-regular;
+  color: $text-color-primary;
+  border-radius: 8px;
+  border: none;
+  background-color: $background-form;
+
+  &::placeholder {
+    color: $text-color-primary;
+  }
+
+  &:focus {
+    border-color: $dark-green;
+    outline: none;
+  }
+}

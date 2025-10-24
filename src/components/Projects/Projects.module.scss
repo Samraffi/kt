@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.accordion {
+  max-width: 930px;
+
+  border-radius: 30px;
+  border-width: 3px;
+  border-style: solid;
+  margin-bottom: 30px;
+
+  .inner {
+    padding: 30px 0;
+  }
+
+  &:nth-child(2n) {
+    margin-left: auto;
+  }
+
+  &:nth-child(3n + 1) {
+    border-color: $yellow;
+  }
+
+  &:nth-child(3n + 2) {
+    border-color: $light-green;
+  }
+
+  &:nth-child(3n) {
+    border-color: $middle-green;
+  }
+}

@@ -1,0 +1,106 @@
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+$light-green: #22ca33;
+$middle-green: #35a040;
+$yellow: #d5a021;
+$dark-green: #3b7541;
+$darkest-green: #324b34;
+
+$background-main: #fbfefb;
+$background-light: #fff9f2;
+
+$background-form: #f8f8f8;
+
+$text-color-primary: #000000;
+$text-color-secondary: #fbfefb;
+$text-color-footer: #ffffff;
+
+$error: #ff0000;
+
+$plan-border: #e6e6e6;
+$plan-week: #939393;
+
+// Console/Terminal specific colors
+$console-bg: #0b0e14;
+$console-text: #e6e6e6;
+$console-border: rgba(255, 255, 255, 0.1);
+$console-prompt: #7bd88f;
+$console-dot-red: #ff5f56;
+$console-dot-yellow: #ffbd2e;
+$console-dot-green: #27c93f;
+
+// Enhanced console colors
+$console-bg-gradient-start: #0a0e1a;
+$console-bg-gradient-end: #1a1f2e;
+$console-accent: #00d4ff;
+$console-success: #00ff88;
+$console-warning: #ffaa00;
+$console-error: #ff5252;
+$console-shadow: rgba(0, 212, 255, 0.2);
+$console-shadow-success: rgba(0, 255, 136, 0.4);
+$console-shadow-error: rgba(255, 82, 82, 0.2);
+
+// Console gradients
+$console-gradient-primary: linear-gradient(
+  135deg,
+  $console-accent 0%,
+  $console-success 100%
+);
+$console-gradient-secondary: linear-gradient(
+  135deg,
+  $console-warning 0%,
+  $console-accent 100%
+);
+$console-gradient-background: linear-gradient(
+  135deg,
+  $console-bg-gradient-start 0%,
+  $console-bg-gradient-end 100%
+);
+
+// Console scaling for high DPI displays
+$console-scale: 0.8; // 20% reduction for 125% Windows scaling
+$console-scale-origin: left top;
+$console-width-scale: 1.25;
+$console-height-scale: 1.25;
+
+// Responsive breakpoints
+$breakpoint-xs: 0px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1536px;
+
+// Container max-widths
+$container-max-width: 1200px;
+$container-padding: 15px;
+
+// Responsive container mixin
+@mixin responsive-container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 15px;
+    width: 100%;
+  }
+}
+
+@mixin at-sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin at-md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}

@@ -1,0 +1,38 @@
+@import "../../../variables";
+
+.header {
+  max-width: 870px;
+  display: flex;
+  flex-direction: column;
+
+  .wrapper {
+    display: flex;
+    gap: 16px;
+  }
+
+  img {
+    flex-shrink: 0;
+    width: auto;
+    height: auto;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.close {
+  transform: rotate(90deg);
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  padding: 0;
+  width: 21px;
+  margin-left: auto;
+}

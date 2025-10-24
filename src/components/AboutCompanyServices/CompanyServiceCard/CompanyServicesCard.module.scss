@@ -1,0 +1,40 @@
+@import "../../../variables";
+.card {
+  padding: 34px 22px 75px;
+  border-width: 3px;
+  border-style: solid;
+  font-weight: $font-medium;
+  border-radius: 30px;
+
+  @include at-md {
+    padding: 28px 18px 60px;
+    border-radius: 25px;
+  }
+
+  @include at-sm {
+    padding: 22px 15px 50px;
+    border-radius: 20px;
+  }
+
+  @include at-md {
+    padding: 28px 18px 60px;
+    border-radius: 25px;
+  }
+
+  @include at-sm {
+    padding: 22px 15px 50px;
+    border-radius: 20px;
+  }
+}
+
+.green {
+  border-color: $middle-green;
+}
+
+.darkgreen {
+  border-color: $dark-green;
+}
+
+.yellow {
+  border-color: $yellow;
+}
